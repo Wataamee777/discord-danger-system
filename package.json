@@ -1,0 +1,16 @@
+{
+  "name": "user-txt-search",
+  "version": "1.0.0",
+  "description": "Expressで完全一致数字検索＆Web検索画面付きAPI",
+  "main": "index.js",
+  "type": "module",
+  "scripts": {
+    "start": "node index.js"
+  },
+  "engines": {
+    "node": ">=18"
+  },
+  "dependencies": {
+    "express": "^4.18.2"
+  }
+}

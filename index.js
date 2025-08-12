@@ -18,7 +18,7 @@ app.get('/', (req, res) => {
 <head>
 <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width,initial-scale=1" />
-<title>完全一致 数字検索</title>
+<title>危険ユーザー検索</title>
 <style>
   body{font-family:system-ui;max-width:900px;margin:auto;padding:20px;}
   input{padding:8px;}
@@ -29,6 +29,7 @@ app.get('/', (req, res) => {
 </head>
 <body>
 <h1>危険ユーザー検索</h1>
+<a href="https://discord-danger-system.onrender.com/search?q=">API</a>
 <input id="q" type="number" placeholder="数字を入力" />
 <button onclick="search()">検索</button>
 <div id="meta"></div>

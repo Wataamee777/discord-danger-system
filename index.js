@@ -30,7 +30,7 @@ app.get('/', (req, res) => {
 <body>
 <h1>危険ユーザー検索</h1>
 <a href="https://discord-danger-system.onrender.com/search?q=">API</a>
-<input id="q" type="number" placeholder="数字を入力" />
+<input id="q" type="number" placeholder="ユーザーIDを入力" />
 <button onclick="search()">検索</button>
 <div id="meta"></div>
 <div id="results" class="result"></div>

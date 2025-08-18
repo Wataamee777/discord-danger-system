@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <title>危険ユーザー検索</title>
+</head>
+<body>
+  <h1>危険ユーザー検索</h1>
+  <input type="text" id="query" placeholder="ユーザーIDを入力">
+  <button onclick="search()">検索</button>
+
+  <pre id="result"></pre>
+
+  <script>
+    let users = [];
+
+    // ページロード時に user.txt を読み込む
+    fetch("user.txt")
+      .then(res => res.text())
+      .then(text => {
+        users = text.split("\n").map(line => line.trim()).filter(line => line);
+        console.log("Loaded", users.length, "users");
+      });
+
+    function search() {
+      const q = document.getElementById("query").value.trim();
+      const result = document.getElementById("result");
+      if (!q) {
+        result.textContent = "ユーザーIDを入力してください";
+        return;
+      }
+
+      // 完全一致検索
+      const matches = users.filter(u => u === q);
+
+      if (matches.length > 0) {
+        result.textContent = `危険です\n${matches.join("\n")}`;
+      } else {
+        result.textContent = "登録されていませんでした。ただ登録されていない場合もございますので注意してください。";
+      }
+    }
+  </script>
+</body>
+</html>
